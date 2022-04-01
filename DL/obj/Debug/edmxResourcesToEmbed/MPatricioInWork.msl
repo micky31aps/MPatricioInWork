@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MPatricioInWorkModelStoreContainer" CdmEntityContainer="MPatricioInWorkEntities">
+    <EntitySetMapping Name="Agenda">
+      <EntityTypeMapping TypeName="MPatricioInWorkModel.Agendum">
+        <MappingFragment StoreEntitySet="Agenda">
+          <ScalarProperty Name="IdTelefono" ColumnName="IdTelefono" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AgendaAdd" FunctionName="MPatricioInWorkModel.Store.AgendaAdd" />
+    <FunctionImportMapping FunctionImportName="AgendaDelete" FunctionName="MPatricioInWorkModel.Store.AgendaDelete" />
+    <FunctionImportMapping FunctionImportName="AgendaGetAll" FunctionName="MPatricioInWorkModel.Store.AgendaGetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MPatricioInWorkModel.AgendaGetAll_Result">
+          <ScalarProperty Name="IdTelefono" ColumnName="IdTelefono" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AgendaGetById" FunctionName="MPatricioInWorkModel.Store.AgendaGetById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MPatricioInWorkModel.AgendaGetById_Result">
+          <ScalarProperty Name="IdTelefono" ColumnName="IdTelefono" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AgendaUpdate" FunctionName="MPatricioInWorkModel.Store.AgendaUpdate" />
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,44 @@
+﻿@model ML.Agenda
+@{
+    ViewBag.Title = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>GetAll</h2>
+<br />
+<div style="float:right">
+    @Html.ActionLink("Agregar", "Form", "Agenda", htmlAttributes: new { @class = "btn btn-success" })
+</div>
+<hr />
+<div>
+    <br />
+    <table class="table table-bordered table-responsive">
+        <thead>
+            <tr>
+                <td>Editar</td>
+                <td class="hidden">IdTelefono</td>
+                <td>Nombre</td>
+                <td>Apellido Paterno</td>
+                <td>Apellido Materno</td>
+                <td>Telefono</td>
+                <td>Email</td>
+                <td>Eliminar</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (ML.Agenda agenda in Model.Agendas)
+            {
+                <tr>
+                    <td><a class="btn btn-warning glyphicon glyphicon-edit" href="@Url.Action("Form", "Agenda", new {IdTelefono = agenda.IdTelefono })"></a></td>
+                    <td class="hidden">@agenda.IdTelefono</td>
+                    <td>@agenda.Nombre</td>
+                    <td>@agenda.ApellidoPaterno</td>
+                    <td>@agenda.ApellidoMaterno</td>
+                    <td>@agenda.Telefono</td>
+                    <td>@agenda.Email</td>
+                    <td><a class="btn btn-danger glyphicon glyphicon-trash" href="@Url.Action("Delete", "Agenda", new {IdTelefono = agenda.IdTelefono })" onclick="return confirm('Estas seguro que deseas eliminar este registro');"></a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
